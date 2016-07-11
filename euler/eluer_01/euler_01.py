@@ -4,7 +4,8 @@ class MultiplesOf3And5(object):
 
      Find the sum of all the multiples of 3 or 5 below 1000."""
 
-    def get_n_numbers(self, param_number):
+    @staticmethod
+    def get_n_numbers(param_number):
         numbers_array = []
         for number in xrange(1, param_number):
             numbers_array.append(number)
@@ -17,6 +18,14 @@ class MultiplesOf3And5(object):
                 multiples_of_3_and_5.append(number_candidate)
         return multiples_of_3_and_5
 
-    def is_multiple_of_3_or_5(self, number):
+    @staticmethod
+    def is_multiple_of_3_or_5(number):
         if number % 3 == 0 or number % 5 == 0:
             return number
+
+    @classmethod
+    def sum_array_of_numbers(cls, numbers):
+        numbers_sum = 0
+        for number in numbers:
+            numbers_sum += number
+        return numbers_sum
