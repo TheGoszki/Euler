@@ -5,7 +5,7 @@ import pytest
 @pytest.mark.parametrize(
     ['param_number', 'param_result'],
     [
-        (5, [1, 2, 3, 4, 5]),
+        (5, [1, 2, 3, 4]),
     ]
 )
 def test_get_n_numbers(param_number, param_result):
@@ -36,3 +36,9 @@ def test_is_multiple_of_3(param_number, param_result):
 )
 def test_is_multiple_of_5(param_number, param_result):
     assert Multiples().is_multiple_of_5(param_number) == param_result
+
+
+def test_list_multiplies_of_3_and_5():
+    boundary = 10
+    multiplies_of_3_and_5 = [3, 5, 6, 9]
+    assert Multiples().list_multiplies_of_3_and_5(boundary) == multiplies_of_3_and_5    # noqa
