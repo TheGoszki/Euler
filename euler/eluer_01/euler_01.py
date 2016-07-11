@@ -14,3 +14,8 @@ class MultiplesOf3And5(object):
         if number % 3 == 0:
             return True
         return False
+
+    def is_multiple_of_5(self, number):
+        if number % 5 == 0:
+            return True
+        return False
