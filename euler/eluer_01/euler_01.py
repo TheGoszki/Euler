@@ -4,24 +4,25 @@ class MultiplesOf3And5(object):
 
      Find the sum of all the multiples of 3 or 5 below 1000."""
 
+    def get_multiplies_of_3_and_5(self, boundary):
+        multiples_of_3_and_5 = []
+        for number_candidate in self._get_n_numbers(boundary):
+            if self._is_multiple_of_3_or_5(number_candidate):
+                multiples_of_3_and_5.append(number_candidate)
+        return multiples_of_3_and_5
+
     @staticmethod
-    def get_n_numbers(param_number):
+    def _get_n_numbers(param_number):
         numbers_array = []
         for number in xrange(1, param_number):
             numbers_array.append(number)
         return numbers_array
 
-    def list_multiplies_of_3_and_5(self, boundary):
-        multiples_of_3_and_5 = []
-        for number_candidate in self.get_n_numbers(boundary):
-            if self.is_multiple_of_3_or_5(number_candidate):
-                multiples_of_3_and_5.append(number_candidate)
-        return multiples_of_3_and_5
-
     @staticmethod
-    def is_multiple_of_3_or_5(number):
+    def _is_multiple_of_3_or_5(number):
         if number % 3 == 0 or number % 5 == 0:
-            return number
+            return True
+        return False
 
     @classmethod
     def sum_array_of_numbers(cls, numbers):

@@ -9,13 +9,28 @@ import pytest
     ]
 )
 def test_get_n_numbers(param_number, param_result):
-    assert Multiples().get_n_numbers(param_number) == param_result
+    assert Multiples()._get_n_numbers(param_number) == param_result
+
+
+@pytest.mark.parametrize(
+    ['param_number', 'param_result'],
+    [
+        (2, False),
+        (3, True),
+        (5, True),
+        (6, True),
+        (10, True)
+
+    ]
+)
+def test_is_multiple_of_3_or_5(param_number, param_result):
+    assert Multiples._is_multiple_of_3_or_5(param_number) == param_result
 
 
 def test_list_multiplies_of_3_and_5():
     boundary = 10
     multiplies_of_3_and_5 = [3, 5, 6, 9]
-    assert Multiples().list_multiplies_of_3_and_5(boundary) == multiplies_of_3_and_5    # noqa
+    assert Multiples().get_multiplies_of_3_and_5(boundary) == multiplies_of_3_and_5    # noqa
 
 
 def test_sum_array_of_numbers():
