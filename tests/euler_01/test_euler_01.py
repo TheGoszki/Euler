@@ -10,3 +10,16 @@ import pytest
 )
 def test_get_n_numbers(param_number, param_result):
     assert Multiples().get_n_numbers(param_number) == param_result
+
+
+@pytest.mark.parametrize(
+    ['param_number', 'param_result'],
+    [
+        (3, True),
+        (4, False),
+        (6, True),
+        (10, False)
+    ]
+)
+def test_is_multiple_of_3(param_number, param_result):
+    assert Multiples().is_multiple_of_3(param_number) == param_result

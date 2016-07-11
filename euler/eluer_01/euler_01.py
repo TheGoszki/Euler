@@ -9,3 +9,8 @@ class MultiplesOf3And5(object):
         for number in xrange(1, param_number+1):
             numbers_array.append(number)
         return numbers_array
+
+    def is_multiple_of_3(self, number):
+        if number % 3 == 0:
+            return True
+        return False
