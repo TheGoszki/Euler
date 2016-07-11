@@ -10,20 +10,13 @@ class MultiplesOf3And5(object):
             numbers_array.append(number)
         return numbers_array
 
-    def is_multiple_of_3(self, number):
-        if number % 3 == 0:
-            return True
-        return False
-
-    def is_multiple_of_5(self, number):
-        if number % 5 == 0:
-            return True
-        return False
-
     def list_multiplies_of_3_and_5(self, boundary):
         multiples_of_3_and_5 = []
         for number_candidate in self.get_n_numbers(boundary):
-            if self.is_multiple_of_3(number_candidate) \
-                    or self.is_multiple_of_5(number_candidate):
+            if self.is_multiple_of_3_or_5(number_candidate):
                 multiples_of_3_and_5.append(number_candidate)
         return multiples_of_3_and_5
+
+    def is_multiple_of_3_or_5(self, number):
+        if number % 3 == 0 or number % 5 == 0:
+            return number
